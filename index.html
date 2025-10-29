@@ -234,6 +234,10 @@
             position: relative;
             overflow: hidden;
             z-index: 1;
+            text-decoration: none;
+            /* Ensure links styled as buttons don't have underline */
+            margin: 5px 0;
+            /* Add some vertical spacing between multiple buttons */
         }
 
         .button::before {
@@ -265,24 +269,16 @@
 
         /* Page 2 specific */
         #page2 .card {
-            padding: 0;
+            /* Removed padding: 0; and cursor: pointer; and hover effect from the card itself */
+            padding: 50px;
+            /* Applied padding directly to the card for content spacing */
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37), inset 0 0 20px rgba(138, 43, 226, 0.3);
             border: 1px solid rgba(138, 43, 226, 0.5);
-            cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        #page2 .card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(138, 43, 226, 0.5);
-        }
-
-        #page2 .card-link {
-            display: block;
-            padding: 50px;
-            text-decoration: none;
-            color: inherit;
-        }
+        /* #page2 .card:hover block removed */
+        /* #page2 .card-link block removed */
 
         #page2 .content-wrapper {
             display: flex;
@@ -404,9 +400,7 @@
                 gap: 30px;
             }
 
-            #page2 .card-link {
-                padding: 40px 20px;
-            }
+            /* #page2 .card-link { padding: 40px 20px; } - Removed */
         }
     </style>
 </head>
@@ -432,15 +426,16 @@
     <!-- Page 2 -->
     <div class="page" id="page2">
         <div class="card" id="card2">
-            <a href="https://www.canva.com/en_in/signup/?brandAccessToken=NiOr09-gYUaX4GeSvVxM3g&invitationToken=NiOr09-gYUaX4GeSvVxM3g&brandingVariant=edu&signupRedirect=%2Fbrand%2Fjoin%3Ftoken%3DNiOr09-gYUaX4GeSvVxM3g%26brandingVariant%3Dedu%26referrer%3Dteam-invite&loginRedirect=%2Fbrand%2Fjoin%3Ftoken%3DNiOr09-gYUaX4GeSvVxM3g%26brandingVariant%3Dedu%26referrer%3Dteam-invite" class="card-link" target="_blank">
-                <div class="content-wrapper">
-                    <div class="title-group">
-                        <img src="https://i.ibb.co/tP36PJn7/1691829322canva-app-logo-png.png" alt="Canva Logo" class="logo-img">
-                        <h1 class="main-text">Canva Lifetime Free</h1>
-                    </div>
-                    <span class="button">Join Now</span>
+            <div class="content-wrapper">
+                <div class="title-group">
+                    <img src="https://i.ibb.co/tP36PJn7/1691829322canva-app-logo-png.png" alt="Canva Logo" class="logo-img">
+                    <h1 class="main-text">Canva Lifetime Free</h1>
                 </div>
-            </a>
+                <!-- Three separate "Join Now" buttons with different links -->
+                <a href="https://www.canva.com/brand/join?token=ssDYHjk0Ejqcrgsh_mIweg&brandingVariant=edu&referrer=team-invite" class="button" target="_blank">Join Now 1</a>
+                <a href="https://www.canva.com/brand/join?token=5dHIIzwfCVQIm4tiFbf0eg&brandingVariant=edu&referrer=team-invite" class="button" target="_blank">Join Now 2</a>
+                <a href="https://www.canva.com/brand/join?token=PzhVMQc_XhVmz2GNdJQCwg&brandingVariant=edu&referrer=team-invite" class="button" target="_blank">Join Now 3</a>
+            </div>
         </div>
     </div>
 
